@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando media</title>
+    <style>
+        body{
+            background-color: #5e79f3;
+            color: white;
+            font: normal 20pt Arial;
+        }
+        #botao{
+            width:200px;
+            height:100px ;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Calculando media</h1>
+    <input type="button" id="botao" value="Calcular Media" onclick="calcula()">
+    <div id="post"></div>
+    <script>
+        function calcula(params) {
+            var post = document.querySelector('div#post')
+            var nome = prompt('Digite o seu nome')
+            var n1 = Number(prompt('digite a primeira nota:'));
+            var n2 = Number(prompt('digite a segunda nota:'));
+            var res = (n1 + n2)/2
+
+            post.innerHTML = `<p>Corrigindo a nota de ${nome}</p>`
+
+            post.innerHTML += `<p>As notas obtidas foram ${n1} e ${n2}</p>`
+
+            post.innerHTML += `<p>A média e de ${res}</p>`
+        }
+        
+    </script>
+</body>
+</html>

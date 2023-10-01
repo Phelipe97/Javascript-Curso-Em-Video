@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pais de origem</title>
+</head>
+<body>
+    <h1>Verrifica pais de origem</h1>
+    Qual o seu país:<input type="text" name="pais" id="pais">
+    <input type="button" value="play" onclick="verifica()">
+    <div id="res">
+
+    </div>
+</body>
+<script>
+    function verifica() {
+        var search = document.querySelector('input#pais')
+        var res = document.getElementById('res')
+        var pais =(search.value)
+        res.innerHTML = `<p>Seu pais e ${pais}</p>`
+        if(pais != 'Brasil'&& pais != 'brasil'){
+            res.innerHTML += `<p>Você é ESTRANGEIRO</p>`
+        }else{
+            res.innerHTML += `<p>Você é BRASILEIRO</p>`
+        }
+        
+    }
+</script>
+</html>
