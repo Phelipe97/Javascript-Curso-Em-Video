@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        input {
+            width: 200px;
+            padding: 10px;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        p{
+            font-size: 1.2em;
+        }
+    </style>
+    <title>Calculo de desconto</title>
+</head>
+
+<body>
+    <h1>Desconto</h1>
+    <input type="button" value="Desconto de 10%" onclick="desconto()">
+    <div id="medidas">Clique no botão acima para iniciar</div>
+    <script>
+        var medida = document.querySelector('div#medidas')
+        function desconto() {
+            var pdComprado = prompt("Qual produto você esta comprando?")
+            var preco = Number(prompt(`Qual o preço do seu ${pdComprado}`))
+            var desconto = preco * (10 / 100)
+            var pTotal = preco - desconto
+
+            medida.innerHTML = `<p> O preço original era R$ ${preco} </p>`
+
+            medida.innerHTML += `<p> Voce acaba de ganhar ${desconto.toFixed(2)} de desconto (-10%) </p>`
+
+            medida.innerHTML += `<p> No fim,você vai pagar R$ ${pTotal.toFixed(2)} no produto ${pdComprado} </p>`
+        }
+    </script>
+</body>
+
+</html>

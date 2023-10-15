@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        input {
+            width: 200px;
+            padding: 10px;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <title>Conversor Monetario</title>
+</head>
+<body>
+    <h1>Conversor R$ -> US$</h1>
+    <input type="button" value="Converter" onclick="converter()">
+    <div id="medidas">Clique no botão acima para iniciar</div>
+    <script>
+        var dolarAtual = Number(prompt("Antes de mais nada.Qual a cotação do dolar agora?"))
+        var realAtual = 1/dolarAtual
+        var medida = document.querySelector('div#medidas')
+        function converter() {
+           var realInfo = Number(prompt("Quantos R$ você tem na carteira"))
+           var realConvertido = realInfo*realAtual
+           medida.innerHTML = `Voce tem ${realConvertido.toFixed(2)} US$`
+        }
+    </script>
+</body>
+</html>

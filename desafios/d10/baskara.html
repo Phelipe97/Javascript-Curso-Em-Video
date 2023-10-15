@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equação de 2° grau</title>
+    <style>
+        input {
+            width: 180px;
+            padding: 15px;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Equação de 2° grau</h1>
+    <input type="button" value="Calcula" id="botao">
+    <div id="texto">Considerando uma Equação no formato <strong>ax²+bx +c = 0</strong>,aperte o botão acima para calcular o valor de Δ.</div>
+    <script>
+        var texto = document.querySelector('div#texto')
+        var botao = document.querySelector('input#botao')
+        botao.addEventListener('click',calcula)
+
+        function calcula() {
+            let a = Number(prompt('Qual o valor de a?'))
+            let b = Number(prompt('Qual o valor de b?'))
+            let c = Number(prompt('Qual o valor de c?'))
+            let Δ =  b*b-4*a*c
+
+            texto.innerHTML = `<h2>Resolvendo Bhaskara</h2>`
+            texto.innerHTML += `<p>A equação atual é ${a}x²+${b}x+${c}=0</p>`
+            texto.innerHTML += `<p>O cálculo realizado será Δ =${b}²-4.${a}.${c}</p>`
+            texto.innerHTML += `<p>O valor valculado foi <mark>Δ =${Δ}.</mark></p>`
+        }
+
+    </script>
+</body>
+</html>
