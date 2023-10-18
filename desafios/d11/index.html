@@ -3,6 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        input {
+            width: 180px;
+            padding: 15px;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .verde{
+            color: green;
+            background-color: lightgreen;
+        }
+        .vermelho{
+            color: darkred;
+            background-color: lightcoral;
+        }
+    </style>
     <title>Ano Bissexto</title>
 </head>
 <body>
@@ -10,7 +26,23 @@
     <input type="button" value="Verificar" id="botao">
     <div id="info">Informe um ano para saber se ele e bissesto</div>
     <script>
-        
+
+        var info = document.getElementById('info')
+        var botao = document.getElementById('botao')
+        botao.addEventListener('click',verifica)
+
+        function verifica(){
+            let ano = Number(prompt('Qual o ano que sera verifico ?'))
+
+            info.innerHTML = `<h2>Analisando o ano de ${ano}</h2>`
+
+            if(ano % 400 == 0 || ano % 4 == 0 && ano % 100 != 0 ){
+                info.innerHTML += `<p>Esse ano de ${ano} <strong class="verde">e Bissexto \u{2705}</strong></p>`
+            }else{
+                info.innerHTML += `<p>Esse ano de ${ano} <strong class ="vermelho">Não e Bissexto \u{274C}</strong></p>`
+            }
+
+        }
     </script>
 </body>
 </html>
