@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
     <title>Modelo de Exercicio</title>
 </head>
 <body>
@@ -12,15 +13,17 @@
     </header>
     <section>
         <div>
-        <p>Numero: <input type="number" name="Numero" id="Numero"> <input type="button" value="Gerar Tabuada"></p>
+        <p>Numero: <input type="number" name="Numero" id="Num"> <input type="button" value="Gerar Tabuada" onclick="gerarTabuada()"></p>
         </div>
         <div>
-            
+        <select name="tabuada" id="selTab" size="10">
+            <option>Digite um numero acima</option>
+        </select>
         </div>
     </section>
     <footer>
         <p>&copy; Curso em Video</p>
     </footer>
-    <script src="main.js"></script>
+    
 </body>
 </html>
